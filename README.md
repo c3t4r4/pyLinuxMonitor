@@ -9,7 +9,7 @@ curl -sL https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setup.sh |
 
 Para Instalar em Proxmox Rode:
 ```sh
-curl -sL https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setupProxmox.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setupProxmox.sh | bash
 ```
 
 Monitor Web : git@github.com:c3t4r4/pyLinuxMonitorWeb.git
