@@ -15,12 +15,12 @@ curl -o $SCRIPT_DIR/$SCRIPT_NAME $SCRIPT_URL
 # Instala as dependências
 python3 -m pip install psutil requests
 
-# Gera um ID único
-unique_id=$(uuidgen)
-
 # Coleta a URL da API e a API Key do usuário
 read -p "Insira a URL da API: " api_url
+
 read -p "Insira a API Key: " api_key
+
+read -p "Insira a Unique ID: " unique_id
 
 # Salva as configurações no arquivo config.py no diretório do script
 echo "unique_id = '$unique_id'" > $SCRIPT_DIR/$CONFIG_FILE_NAME
@@ -49,8 +49,9 @@ User=root
 WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
 
 # Recarrega os serviços systemd, inicia e habilita o serviço
+sudo chmod +x $SERVICE_FILE
 sudo systemctl daemon-reload
-sudo systemctl start pyLinuxMonitor.service
-sudo systemctl enable pyLinuxMonitor.service
+#sudo systemctl enable pyLinuxMonitor.service
+#sudo systemctl start pyLinuxMonitor.service
 
-echo "Script configurado e serviço iniciado com sucesso!"
+echo "Script configurado com sucesso!, Agora configure o arquivo config e depois ative e inicie o serviço: pyLinuxMonitor.service"
