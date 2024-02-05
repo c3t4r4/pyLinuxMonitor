@@ -17,13 +17,13 @@ def get_system_info():
 
     # Coleta informações de memória
     memory = psutil.virtual_memory()
-    ram_usage = memory.percent
-    ram_total = memory.total / (1024 ** 3)  # Convertendo bytes para GB
+    ram_usage = "{:.2f}".format(memory.percent)
+    ram_total = "{:.2f}".format(memory.total / (1024 ** 3))  # Convertendo bytes para GB
 
     # Coleta informações do disco (múltiplos discos podem ser adicionados)
     disk = psutil.disk_usage('/')
-    disk_usage = disk.percent
-    disk_total = disk.total / (1024 ** 3)  # Convertendo bytes para GB
+    disk_usage = "{:.2f}".format(disk.percent)
+    disk_total = "{:.2f}".format(disk.total / (1024 ** 3)) # Convertendo bytes para GB
 
     return {
         "node_id": config.unique_id,
