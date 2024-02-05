@@ -2,14 +2,17 @@
 
 Ubuntu Like
 
-Para Instalar Rode:
+# Baixar o script para Linux:
 ```sh
-curl -sL https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setup.sh | sudo bash
+curl -sL -o setup.sh https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setup.sh && chmod +x setup.sh
 ```
 
-Para Instalar em Proxmox Rode:
+# Baixar o script para Proxmox Rode:
 ```sh
-curl -sL https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setupProxmox.sh | bash
+curl -sL -o setup.sh https://raw.githubusercontent.com/c3t4r4/pyLinuxMonitor/main/setupProxmox.sh && chmod +x setup.sh
 ```
+
+# Executar o script
+sudo ./setup.sh
 
 Monitor Web : git@github.com:c3t4r4/pyLinuxMonitorWeb.git
