@@ -13,7 +13,7 @@ mkdir -p $SCRIPT_DIR
 curl -o $SCRIPT_DIR/$SCRIPT_NAME $SCRIPT_URL
 
 # Instala as dependências
-python3 -m pip install psutil requests
+sudo apt install python3-psutil python3-requests -y
 
 # Coleta a URL da API e a API Key do usuário
 read -p "Insira a URL da API: " api_url
