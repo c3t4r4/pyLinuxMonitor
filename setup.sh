@@ -51,7 +51,7 @@ WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
 # Recarrega os serviços systemd, inicia e habilita o serviço
 sudo chmod +x $SERVICE_FILE
 sudo systemctl daemon-reload
-#sudo systemctl enable pyLinuxMonitor.service
-#sudo systemctl start pyLinuxMonitor.service
+sudo systemctl enable pyLinuxMonitor.service
+sudo systemctl start pyLinuxMonitor.service
 
 echo "Script configurado com sucesso!, Agora configure o arquivo config e depois ative e inicie o serviço: pyLinuxMonitor.service"
