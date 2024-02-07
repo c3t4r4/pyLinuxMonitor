@@ -13,7 +13,7 @@ mkdir -p $SCRIPT_DIR
 curl -o $SCRIPT_DIR/$SCRIPT_NAME $SCRIPT_URL
 
 # Instala as dependências
-python3 -m pip install psutil requests
+sudo apt install python3-psutil python3-requests -y
 
 # Coleta a URL da API e a API Key do usuário
 read -p "Insira a URL da API: " api_url
@@ -51,7 +51,7 @@ WantedBy=multi-user.target" | sudo tee $SERVICE_FILE
 # Recarrega os serviços systemd, inicia e habilita o serviço
 sudo chmod +x $SERVICE_FILE
 sudo systemctl daemon-reload
-#sudo systemctl enable pyLinuxMonitor.service
-#sudo systemctl start pyLinuxMonitor.service
+sudo systemctl enable pyLinuxMonitor.service
+sudo systemctl start pyLinuxMonitor.service
 
 echo "Script configurado com sucesso!, Agora configure o arquivo config e depois ative e inicie o serviço: pyLinuxMonitor.service"
