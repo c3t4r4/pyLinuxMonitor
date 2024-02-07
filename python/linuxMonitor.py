@@ -27,13 +27,14 @@ def get_largest_partition_info():
 
         # Se o disco ainda não está no dicionário ou se esta partição é maior, atualiza
         if disk_base not in partitions_info or usage.total > partitions_info[disk_base]['total']:
-            partitions_info[disk_base] = {
-                'disk': part.device,
-                'usage_percent': usage.percent,
-                'total': usage.total / (1024 ** 3),
-                'total_gb': "{:.2f}".format(usage.total / (1024 ** 3)),  # Convertendo para GB
-                'used_gb': "{:.2f}".format(usage.used / (1024 ** 3))  # Convertendo para GB
-            }
+            if usage.total / (1024 ** 3) > 10:
+                partitions_info[disk_base] = {
+                    'disk': part.device,
+                    'usage_percent': usage.percent,
+                    'total': usage.total / (1024 ** 3),
+                    'total_gb': "{:.2f}".format(usage.total / (1024 ** 3)),  # Convertendo para GB
+                    'used_gb': "{:.2f}".format(usage.used / (1024 ** 3))  # Convertendo para GB
+                }
 
     return list(partitions_info.values())
 
